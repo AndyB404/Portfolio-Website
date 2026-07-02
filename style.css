@@ -119,13 +119,14 @@ p{
 }
 
 .gallery{
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fill, 180px);
     justify-content: center;
     gap: 1.5rem;
     padding: 0;
     list-style: none;
     display: grid;    
 }
+
 
 .paintcrate-gallery{
     grid-template-columns: minmax(0, 1fr);
@@ -217,17 +218,6 @@ aside{
     border-radius: 1em;
 }
 
-/*image*/
-.side-image img{
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 0.6em;
-}
-
 input[type=text], input[type=email], textarea{
 
     width: 100%; 
@@ -259,13 +249,69 @@ input[type=submit]:hover {
   background-color: #78b392;
 }
 
-/*image wrapper*/
+
 .side-container{
     border: 1px solid #150e10;
     margin: 5px;
     padding: 5px;
     border-radius: 1em;
 }
+
+.side-image-wrapper{
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+/*image*/
+.slider img{
+    display: block;
+    scroll-snap-align: start;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.6em;
+}
+
+.slider{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.6rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+}
+
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
 
 a:link{
     color: white;
