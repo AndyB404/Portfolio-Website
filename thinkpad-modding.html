@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Brice Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <header>
+            <div class="title-image">
+                <img src="/res/WebsiteBanner-V2.png" alt="Andrew Brice" width="760" height="234">
+            </div>
+        </header>
+
+        <main>
+            <div class="scroll-wrap">
+                <section class="main-subsection">
+                    <h3>Lenovo T430 Thinkpad Modding</h3>
+                    <p>  
+                        This page demonstrates my experience refurbishing and modding a <b>Lenovo ThinkPad T430</b> laptop. It is <b>NOT</b> a guide.
+                        Please do your own research before attempting anything shown here. I have provided some useful links at the bottom of the page that may help.     
+                    </p>
+                    <p>
+                        My inspiration to mod an old ThinkPad started when my gaming laptop's CPU began to fail. The only fix was an expensive CPU reballing service, which isn't offered anywhere near where I live.
+                        This got me thinking about laptop repairability, and I eventually stumbled upon videos of people tinkering with old ThinkPads due to their modular design compared to most modern laptops.
+                        I wanted a machine I could use for daily admin tasks, watching YouTube videos, and learning programming, so I decided to try this myself and bought an old T430 from <b>eBay</b>.
+                        I chose the T430 because it was inexpensive, features an easily replaceable (socketed) CPU, and has extensive online resources for modding.   
+                    </p>
+                    <p>
+                        When I got the laptop, I began by cleaning the T430 and removing the adhesive stickers from its case.
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>Before Cleaning</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/beforeclean.webp" alt="Before cleaining the laptop" width="700" height="473">
+                        </div>
+                    </figure>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>After Cleaning</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/afterclean.webp" alt="After cleaining the laptop" width="700" height="491">
+                        </div>
+                    </figure>
+                    <p>
+                        My plan was to upgrade the T430 with new components like a better Wi-Fi adapter, a third-party battery, and the T420 keyboard mod.
+                        My first hurdle was removing the supervisor password that the laptop came with. As the password was unknown to me, I had to use a trick where you short two pins on the motherboard whilst the computer starts up
+                        (this video explains it: <a href="https://youtu.be/Q7RXQLt4k0E?t=277">SVP Removal Video</a>).
+                        Once I was in the BIOS, I could remove the password, enabling me to perform the required firmware mods for my planned upgrades.   
+                    </p>
+                    <p>
+                        The picture below shows the BIOS and embedded controller versions that the laptop came with.
+                        I needed to upgrade to BIOS version 2.64 and EC 1.13, as this was a requirement for a software-based jailbreak called <b>1vyrain</b>. 
+                        I did this by using another tool called <b>IVprep</b> (read more here: <a href="https://github.com/n4ru/IVprep">IVprep GitHub</a>).
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>Original BIOS - Will not work with 1vyrain</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/originalbios.webp" alt="Original BIOS" width="700" height="460">
+                        </div>
+                    </figure>
+                    <p>
+                        This jailbreak creates a custom BIOS version that allows for more tinkering and, most importantly for me, removes the whitelist of WLAN/WWAN adapters, allowing me to upgrade to a faster Wi-Fi card.
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>1vyrain BIOS flash in progress</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/1vyrainpatch.webp" alt="1vyrain BIOS flash in progress" width="700" height="416">
+                        </div>
+                    </figure>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>Advanced tab available after 1vyrain patch</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/1vyrainbios.webp" alt="Advanced tab available after 1vyrain patch" width="700" height="416">
+                        </div>
+                    </figure>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>1vyrain patched BIOS version</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/1vyrainbios2.webp" alt="1vyrain patched BIOS version" width="700" height="480">
+                        </div>
+                    </figure>
+                    <p>
+                        Next, I needed to flash the Embedded Controller (EC) to remove the battery whitelist and use the T420 keyboard. To do this, you can use software called <b>thinkpad-ec</b>.
+                        This is the stage where I encountered an issue. I had just completed the <b>1vyrain</b> patch, which upgrades the BIOS to a modded version of 2.82; this version is incompatible with the EC flash software.
+                        To fix this, I used <b>IVprep</b> again to reset the BIOS back to 2.64, enabling me to perform the <b>thinkpad-ec</b> flash before re-applying the <b>1vyrain</b> patch.
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>"thinkpad-ec" flash in progress</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/ecflash.webp" alt="thinkpad-ec flash in progress" width="700" height="458">
+                        </div>
+                    </figure>
+                    <p>
+                        After the <b>thinkpad-ec</b> flash and <b>1vyrain</b> BIOS upgrade, I was ready for my planned hardware mods.
+                    </p>
+                    <p>
+                        First, I tested the third-party battery I bought (Lenovo 0A36302 10.8V 4400mAh from CELLONIC). It worked without any issues thanks to the EC flash.
+                    </p>
+                    <p>
+                        Next, I upgraded the CPU from a <b>Core i5-3320M</b> to a <b>Core i7-3632QM</b>. I disassembled the T430, removed the heatsink and old CPU, and installed the i7.
+                        I decided to use a <b>Honeywell PTM 7950</b> thermal pad, as I had only ever used thermal paste and wanted to try something different (plus, I saw recommendations for it on the forums).
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>i7 CPU installation with thermal pad</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/i7.webp" alt="i7 CPU installation with thermal pad" width="700" height="464">
+                        </div>
+                    </figure>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>Successfully installed CPU as shown in BIOS</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/i7bios.webp" alt="Successfully installed CPU as shown in BIOS" width="700" height="462">
+                        </div>
+                    </figure>
+                    <p>
+                        My next upgrade was replacing the Intel Centrino Advanced-N 6205 Wi-Fi card with the <b>MPE AX3000H</b> card. This provides Wi-Fi 6 compatibility, Bluetooth 5, and significantly higher speeds.
+                        This upgrade worked without issues due to the earlier EC flash.
+                    </p>
+                    <P>
+                        After this, I upgraded from 8GB of DDR3 RAM to 16GB of <b>DDR3L</b> RAM. I chose DDR3L because it uses less power than standard DDR3 while maintaining the same performance.
+                        This was recommended in the definitive T430 modding guide by n4ru, which was one of my main sources of information. Link to the guide: <a href="https://medium.com/@n4ru/the-definitive-t430-modding-guide-3dff3f6a8e2e"> T430 modding guide</a>
+                    </P>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>16 GB RAM Upgrade</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/ram.webp" alt="16 GB RAM Upgrade" width="700" height="394">
+                        </div>
+                    </figure>
+                    <p>
+                        Next, I changed my operating system from Windows 10 to <b>Linux Mint</b>.
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>Linux Mint OS change</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/linuxmint.webp" alt="Linux Mint OS change" width="700" height="458">
+                        </div>
+                    </figure>
+                    <p>
+                        The final hardware upgrades that I have done so far were replacing the trackpad sticker and installing the <b>T420</b> keyboard.
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>New sticker and original T430 keyboard</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/originalkeyboard.webp" alt="New sticker and original T430 keyboard" width="700" height="525">
+                        </div>
+                    </figure>
+                    <p>
+                        Finding a genuine UK version of the T420 keyboard on eBay was harder than expected. I tried two cheap replacement keyboards, but both had to be returned due to poor quality.
+                        I do not recommend anything other than genuine Lenovo keyboards. I eventually settled for a US layout, as it was the only genuine option reasonably priced at the time.
+                    </p>
+                    <p>
+                        The first step of this upgrade was taping off three of the contacts on the T420 keyboard's ribbon cable.
+                        This prevents the contacts from shorting out due to slight differences in the wiring layout between the two models, which could otherwise cause electrical conflicts or damage.
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>T420 Keyboard ribbon cable contacts</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/keyboardcable.webp" alt="T420 Keyboard ribbon cable contacts" width="700" height="525">
+                        </div>
+                    </figure>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>T420 Keyboard ribbon cable</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/keyboardcable2.webp" alt="T420 Keyboard ribbon cable" width="700" height="426">
+                        </div>
+                    </figure>
+                    <p>
+                        To get the T420 keyboard to fit better in the T430, I used my Dremel to sand down some of the keyboard clips. You can read more about the process here:
+                        <a href="https://www.thinkwiki.org/wiki/Install_Classic_Keyboard_on_xx30_Series_ThinkPads"> Keyboard Mod Guide</a>
+                    </p>
+                    <figure>
+                        <p>
+                            <figcaption>
+                                <i>T420 Keyboard mod</i>
+                            </figcaption>
+                        </p>
+                        <div class="general-image">
+                            <img src="/res/computing/thinkpad/t420keyboard.webp" alt="T420 Keyboard mod" width="700" height="620">
+                        </div>
+                    </figure>
+                    <p>
+                        This is as far as I have got with the modding/refurbishment. In the future, I plan to upgrade the 130GB SSD to a 500GB drive and replace the screen with a 1080p IPS panel.
+                        I have also bought a ThinkPad X230 laptop that I plan to upgrade.
+                    </p>
+                    <p>
+                        Thanks for reading. If you have any questions please feel free to contact me.
+                    </p>
+                
+                    <h4>Useful Links:</h4>
+                    <ul>
+                        <li><a href="https://medium.com/@n4ru/the-definitive-t430-modding-guide-3dff3f6a8e2e">The Definitive T430 Modding Guide</a></li>
+                        <li><a href="https://github.com/n4ru/IVprep">IVprep GitHub</a></li>
+                        <li><a href="https://github.com/n4ru/1vyrain/">1vyrain GitHub</a></li>
+                        <li><a href="https://1vyra.in/">1vyrain Download Website</a></li>
+                        <li><a href="https://github.com/hamishcoleman/thinkpad-ec">EC Flash Guide</a></li>
+                        <li><a href="https://www.thinkwiki.org/wiki/Install_Classic_Keyboard_on_xx30_Series_ThinkPads">Keyboard Modding Guide</a></li>
+                        <li><a href="https://imgur.com/a/fsRe6 ">Imgur Keyboard Modding Guide (access with VPN if in UK)</a></li>
+                    </ul>
+                </section>
+            </div>
+
+        </main>
+
+        <aside>
+            <section class="navsection">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="computing.html">Computing</a></li>
+                        <li><a href="sound.html">Sound Design</a></li>
+                        <li><a href="3d.html">3D Modeling</a></li>
+                        <li><a href="hobbies.html">Hobbies</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="contact-me">
+                <h2>
+                    Contact Me
+                </h2>
+
+                <form action="https://formspree.io/f/xwvydpoo" method="post">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="your name...">
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="your email...">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="your message..." style="height:100px"></textarea>
+
+                    <input type="submit" value="Submit Message">
+                </form>
+                
+            </section> 
+            <section class="side-container">
+                <div class="side-image-wrapper">
+                    <div class="slider">
+                        <img id="slide-1" src="/res/art/thumb/SpiritTreeDay.webp" alt="Spirit Tree Day" width="180" height="180" loading="lazy"> 
+                        <img id="slide-2" src="/res/art/thumb/SpiritTreeNight.webp" alt="Spirit Tree Night" width="180" height="180" loading="lazy"> 
+                        <img id="slide-3" src="/res/art/thumb/FlailRender3.webp" alt="Flail" width="180" height="180" loading="lazy">
+                        <img id="slide-4" src="/res/art/thumb/VampireSword.webp" alt="Vampire Sword" width="180" height="180" loading="lazy"> 
+                        <img id="slide-5" src="/res/art/thumb/Computer.webp" alt="Computer" width="180" height="180" loading="lazy"> 
+                        <img id="slide-6" src="/res/art/thumb/Windmill-Sky-Front.webp" alt="Windmill Front" width="180" height="180" loading="lazy"> 
+                        <img id="slide-7" src="/res/art/thumb/Windmill-Sky-Back.webp" alt="Windmill Back" width="180" height="180" loading="lazy">
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#slide-1"></a>
+                        <a href="#slide-2"></a>
+                        <a href="#slide-3"></a>
+                        <a href="#slide-4"></a>
+                        <a href="#slide-5"></a>
+                        <a href="#slide-6"></a>
+                        <a href="#slide-7"></a>
+                    </div>    
+                </div>
+            </section> 
+        </aside>
+
+        <footer>
+            <a href="https://www.linkedin.com/in/andrew-b-232462142">LinkedIn</a> |
+            <a href="https://github.com/AndyB404">GitHub</a> |
+            <a href="https://andrewbrice.crd.co/">Old Website</a>
+        </footer>
+        
+    </div>
+</body>
+</html>

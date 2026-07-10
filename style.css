@@ -193,6 +193,13 @@ header{
     margin: 0 auto;
 }
 
+.general-image img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
 
 aside{
     grid-template-columns: minmax(0, 1fr);
