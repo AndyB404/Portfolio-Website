@@ -34,6 +34,9 @@ main{
     border-radius: 1em;
     min-height: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .main-subsection{
@@ -44,7 +47,7 @@ main{
 }
 
 .scroll-wrap{
-    height: 100%;
+    flex: 1;
     overflow: auto;
     min-height: 0;
     box-sizing: border-box;
@@ -147,7 +150,7 @@ p{
     min-height: 80vh;
     display: grid;
     grid-template-columns: 200px minmax(0,1fr);
-    grid-template-rows: auto auto minmax(0, 1fr) auto ;
+    grid-template-rows: auto auto 876px auto ;
     grid-template-areas:
     "header header"
     "navbar navbar"
