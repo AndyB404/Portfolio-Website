@@ -32,7 +32,7 @@ main{
     margin-bottom: 5px;
     padding: 5px;
     border-radius: 1em;
-    max-height: 875.92px;
+    min-height: 0;
     overflow: hidden;
 }
 
@@ -149,10 +149,10 @@ p{
     grid-template-columns: 200px minmax(0,1fr);
     grid-template-rows: auto auto minmax(0, 1fr) auto ;
     grid-template-areas:
-    "header header header"
-    "navbar navbar navbar"
-    "sidebar main main"
-    "footer footer footer";
+    "header header"
+    "navbar navbar"
+    "sidebar main"
+    "footer footer";
     background-color: #d3d3d3;
     /*background-image: url();*/
     width: 60%;
@@ -202,13 +202,13 @@ header{
 }
 
 aside{
-    grid-template-columns: minmax(0, 1fr);
     grid-area: sidebar;
     background-color: #71746b;
     margin-bottom: 5px;
     padding: 5px;
     border-radius: 1em;
     overflow: hidden;
+    min-height: 0;
 }
 
 .navsection{
@@ -272,6 +272,7 @@ input[type=submit]:hover {
 
 /*image*/
 .slider img{
+    flex: 0 0 100%;
     display: block;
     scroll-snap-align: start;
     width: 100%;
@@ -307,6 +308,7 @@ input[type=submit]:hover {
 }
 
 .slider-nav a {
+    display: block;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
